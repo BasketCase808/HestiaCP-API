@@ -9,6 +9,7 @@ use HestiaCP\Command\Add\WebDomain;
 use HestiaCP\Command\Add\WebDomainFtp;
 use HestiaCP\Command\Add\WebDomainSslHsts as AddWebDomainSslHsts;
 use HestiaCP\Command\Add\WebDomainSslForce as AddWebDomainSslForce;
+use HestiaCP\Command\Add\QuickInstallApp;
 use HestiaCP\Command\Add\FsDirectory;
 use HestiaCP\Command\Change\WebDomainFtpPassword;
 use HestiaCP\Command\Change\WebDomainFtpPath;
@@ -304,6 +305,27 @@ class Webs extends Module
 	public function deleteWebDomainSslForce(string $domain): bool
 	{
 		return $this->client->send(new DeleteWebDomainSslForce($this->user, $domain));
+	}
+
+	/**
+	 * This function quick installs an application on the domain.
+	 * 
+	 * @param string $domain
+	 * @param string $appName
+	 * @return bool
+	 * @throws \HestiaCP\ClientException
+	 * @throws \HestiaCP\ProcessException
+	 */
+	public function quickInstallApp(string $domain, string $appName, string $action = 'install'): bool 
+	{
+		$command = new QuickInstallApp(
+			$this->user, // Inherited from getModuleWeb($newUser)
+			$domain, 
+			$appName, 
+			$action
+		);
+
+		return $this->client->send($command);
 	}
 
 	/**

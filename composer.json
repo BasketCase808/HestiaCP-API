@@ -1,5 +1,5 @@
 {
-    "name": "gigabait/hestiacp-api",
+    "name": "basketcase808/hestiacp-api",
     "description": "HestiaCP API SDK in PHP",
     "version": "v1.0.0",
     "require": {
@@ -7,12 +7,12 @@
         "guzzlehttp/guzzle": "^7",
         "nette/utils": "^4"
     },
-    "homepage": "https://github.com/GIGABAIT93/HestiaCP-API",
+    "homepage": "https://github.com/BasketCase808/HestiaCP-API",
     "license": "MIT",
     "authors": [
         {
-            "name": "GIGABAIT",
-            "email": "xgigabaitx@gmail.com"
+            "name": "BasketCase808",
+            "email": "dweebille1@gmail.com"
         }
     ],
     "minimum-stability": "dev",

@@ -78,7 +78,7 @@ $webModule->listDomains();
 
 $webModule->addDomain('domain.com');
 
-$webModule->addDomainLetsEncrypt('domain.com', 'www.domain.com'); // needs longer timeout
+$webModule->addDomainLetsEncrypt('domain.com', 'www.domain.com'); // needs longer default timeout on guzzle
 
 $webModule->deleteDomainLetsEncrypt('domain.com');
 
@@ -95,6 +95,8 @@ $webModule->suspendDomain('domain.com');
 $webModule->unsuspendDomain('domain.com');
 
 $webModule->deleteDomain('domain.com');
+
+$webModule->quickInstallApp('admin', 'osticket');
 
 ```
 
